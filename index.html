@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    // JS & jQuery Validation on submit
+    $(document).ready(function() {
+        $('#studentForm').submit(function(e) {
+            var valid = true;
+            // Simple required field checks
+            if (!$('input[name="name"]').val()) {
+                alert("Name required!");
+                valid = false;
+            }
+            if (!$('input[name="email"]').val()) {
+                alert("Email required!");
+                valid = false;
+            }
+            if (!$('input[name="mobile"]').val()) {
+                alert("Mobile required!");
+                valid = false;
+            }
+            if (!$('select[name="course"]').val()) {
+                alert("Select Course!");
+                valid = false;
+            }
+            if (!$('select[name="interest"]').val()) {
+                alert("Select Interest!");
+                valid = false;
+            }
+            if (!$('select[name="gender"]').val()) {
+                alert("Select Gender!");
+                valid = false;
+            }
+            // Prevent if any required missing
+            return valid;
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Student Registration</h2>
+        <form id="studentForm" action="submit.php" method="post">
+            <label>Name:</label>
+            <input type="text" name="name" required>
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <label>Mobile No:</label>
+            <input type="text" name="mobile" required pattern="[0-9]{10}">
+            <label>Course:</label>
+            <select name="course" required>
+                <option value="">Select...</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+            </select>
+            <label>Interest:</label>
+            <select name="interest" required>
+                <option value="">Select interest...</option>
+                <option value="web">Web Development</option>
+                <option value="ai">Artificial Intelligence</option>
+                <option value="data">Data Science</option>
+                <option value="cloud">Cloud Computing</option>
+                <option value="app">App Development</option>
+            </select>
+            <label>Gender:</label>
+            <select name="gender" required>
+                <option value="">Select gender...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="self-describe">I prefer to self-describe</option>
+            </select>
+           
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
