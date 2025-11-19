@@ -5,11 +5,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    // JS & jQuery Validation on submit
     $(document).ready(function() {
         $('#studentForm').submit(function(e) {
             var valid = true;
-            // Simple required field checks
             if (!$('input[name="name"]').val()) {
                 alert("Name required!");
                 valid = false;
@@ -34,7 +32,6 @@
                 alert("Select Gender!");
                 valid = false;
             }
-            // Prevent if any required missing
             return valid;
         });
     });
@@ -43,7 +40,7 @@
 <body>
     <div class="form-container">
         <h2>Student Registration</h2>
-        <form id="studentForm" action="submit.php" method="post">
+        <form id="studentForm" action="/" method="post">
             <label>Name:</label>
             <input type="text" name="name" required>
             <label>Email:</label>
@@ -81,3 +78,4 @@
     </div>
 </body>
 </html>
+
