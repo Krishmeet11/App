@@ -12,7 +12,12 @@
     {
       "src": "/(.*)",
       "dest": "/api/submit.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
+
 
